@@ -1,7 +1,7 @@
 .PHONY: all fmt
 
 all:
-	e8 -initpc=0x8000
+	e8
 
 fmt:
 	gfmt `find . -name "*.g"`
