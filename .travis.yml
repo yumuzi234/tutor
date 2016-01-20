@@ -1,4 +1,8 @@
 sudo: false
+language: go
+
+go:
+    - 1.5
 
 install:
     - go get e8vm.io/e8vm/cmd/e8
