@@ -1,10 +1,7 @@
 // selectionSort sorts dat in place.
 func selectionSort(dat []int) {
     n := len(dat)
-    if n <= 1 {
-        return
-    }
-
+    if n <= 1 return
     for i := 0; i < n; i++ {
         min := i
         for j := i + 1; j < n; j++ {
@@ -12,6 +9,7 @@ func selectionSort(dat []int) {
                 min = j
             }
         }
+        if min == i continue
         dat[min], dat[i] = dat[i], dat[min]
     }
 }
