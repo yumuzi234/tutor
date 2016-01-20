@@ -5,7 +5,7 @@ go:
     - 1.5
 
 install:
-    - go get e8vm.io/e8vm/cmd/g8
+    - go get e8vm.io/e8vm/cmd/e8
 
 script:
-    - g8 -initpc=0x8000
+    - e8
