@@ -1,7 +1,7 @@
 sudo: false
 
 install:
-    - go get e8vm.io/cmd/e8
+    - go get e8vm.io/e8vm/cmd/e8
 
 script:
     - g8 -initpc=0x8000
