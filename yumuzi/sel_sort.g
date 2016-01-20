@@ -12,6 +12,6 @@ func selectionSort(dat []int) {
                 min = j
             }
         }
-		dat[min], dat[i] = dat[i], dat[min]
+        dat[min], dat[i] = dat[i], dat[min]
     }
 }
