@@ -1,7 +1,6 @@
 import (
-	"fmt"
+    "fmt"
 )
-
 func main() {
-	fmt.PrintStr("Hello, world.\n")
+    fmt.PrintStr("Hello, world.\n")
 }

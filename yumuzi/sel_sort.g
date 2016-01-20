@@ -1,6 +1,3 @@
-// I feel like I should new another int array and return the result, but not to
-// change the input itself var input [len(array)] int does not work, and cannot
-// use make in g
 func selectionSort(array []int) []int {
     if array == nil && len(array) == 1 {
         return array
