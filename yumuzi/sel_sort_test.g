@@ -16,9 +16,19 @@ func checkTestData(dat []int) {
     }
 }
 
+func checkSeqTestData(dat []int) {
+    n := len(dat)
+    for i := 0; i < n; i++ {
+        if dat[i] != i {
+            panic()
+        }
+    }
+}
+
 func TestSelectionSort() {
     d := testData[:]
     fillTestData(d)
     selectionSort(d)
     checkTestData(d)
+    checkSeqTestData(d)
 }
