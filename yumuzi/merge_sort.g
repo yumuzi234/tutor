@@ -1,34 +1,30 @@
-func mergeSort(dat, array []int) {
-    if len(array) != len(dat) return
-    if dat == nil && len(dat) == 1 return 
-    start := 0
-    end := len(dat)
-    split(dat, array, start, end)
+func mergeSort(dat, buf []int) {
+	n := len(dat)
+    if n != len(buf) {
+		panic()
+	}
+    if n <= 1 return 
+    mid := n / 2
+	mergeSort(dat[:mid], buf[:mid])
+	mergeSort(dat[mid:], buf[mid:])
+    merge(dat, buf, mid)
 }
 
-func split(dat, array []int, start, end int) {
-    if end - start < 2 return 
-    mid := start + (end - start) / 2
-    split(dat, array, start, mid)
-    split(dat, array, mid, end)
-    merge(dat, array, start, mid, end)
-}
-
-func merge(dat, array []int, start, mid, end int) {
-    i := start
+func merge(dat, buf []int, mid int) {
+    i := 0
     j := mid
-    cur := start
-    for cur < end {
-        if (i < mid && dat[i] <= dat[j]) || j >= end {
-            array[cur] = dat[i]
+    cur := 0
+	n := len(dat)
+	for cur := 0; cur < n; cur++ {
+        if j >= n || (i < mid && dat[i] < dat[j]) {
+            buf[cur] = dat[i]
             i++
         } else {
-            array[cur] = dat[j]
+            buf[cur] = dat[j]
             j++
         }
-        cur++
     }
-    for k := start; k < end; k++ {
-        dat[k] = array[k]
+    for i := 0; i < n; i++ {
+        dat[i] = buf[i]
     }
 }

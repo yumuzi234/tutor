@@ -1,4 +1,5 @@
 var testData [30]int
+var testBuf [30]int
 
 func fillTestData(dat []int) {
     n := len(dat)
@@ -23,12 +24,4 @@ func checkSeqTestData(dat []int) {
             panic()
         }
     }
-}
-
-func TestSelectionSort() {
-    d := testData[:]
-    fillTestData(d)
-    selectionSort(d)
-    checkTestData(d)
-    checkSeqTestData(d)
 }
