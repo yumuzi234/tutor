@@ -1,19 +1,18 @@
 func mergeSort(dat, buf []int) {
     n := len(dat)
-    if n != len(buf) {
-        panic()
+    if len(buf) < n {
+        panic() // buf not big enough
     }
     if n <= 1 return
     mid := n / 2
-    mergeSort(dat[:mid], buf[:mid])
-    mergeSort(dat[mid:], buf[mid:])
+    mergeSort(dat[:mid], buf)
+    mergeSort(dat[mid:], buf)
     merge(dat, buf, mid)
 }
 
 func merge(dat, buf []int, mid int) {
     i := 0
     j := mid
-    cur := 0
     n := len(dat)
     for cur := 0; cur < n; cur++ {
         if j >= n || (i < mid && dat[i] < dat[j]) {
@@ -24,6 +23,7 @@ func merge(dat, buf []int, mid int) {
             j++
         }
     }
+
     for i := 0; i < n; i++ {
         dat[i] = buf[i]
     }
