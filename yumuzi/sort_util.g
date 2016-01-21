@@ -1,4 +1,5 @@
 var testData [30]int
+
 var testBuf [30]int
 
 func fillTestData(dat []int) {

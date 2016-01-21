@@ -8,7 +8,7 @@ func TestSelectionSort() {
 
 func TestMergeSort() {
     dat := testData[:]
-	buf := testBuf[:]
+    buf := testBuf[:]
     fillTestData(dat)
     mergeSort(dat, buf)
     checkTestData(dat)

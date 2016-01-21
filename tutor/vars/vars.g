@@ -1,6 +1,7 @@
 import (
     "fmt"
 )
+
 func main() {
     var a = 33
 

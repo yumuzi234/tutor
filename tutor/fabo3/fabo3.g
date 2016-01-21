@@ -1,6 +1,7 @@
 import (
     "fmt"
 )
+
 func fabo(n int) int {
     a, b := 0, 1
     for i := 0; i < n; i++ {
